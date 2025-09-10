@@ -352,4 +352,68 @@ main h1 {
   font-weight: 600;
 }
 
+
+.style {
+  background-color: rgba(240, 240, 240, 1);
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+
+}
+
+.style h3 {
+  font-size: 3rem;
+  font-family: var(--font-heading);
+  margin-top: 4rem;
+}
+
+.style-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Create 4 equal columns for flexibility */
+  grid-template-rows: repeat(2, 1fr);
+  gap: 1rem;
+  padding: 4rem;
+}
+
+.style-grid a {
+  max-height: 289px;
+  position: relative;
+}
+
+.style-grid a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.style-grid a h4 {
+  position: absolute;
+  z-index: 999;
+  color: var(--black-color);
+  top: 0;
+  padding: 1rem;
+  font-size: 2rem;
+  font-family: var(--font-body);
+}
+
+.casual {
+  grid-column: span 2; 
+}
+
+.formal {
+  grid-column: span 3; 
+}
+
+.party {
+  grid-column: span 3; 
+}
+
+.gym {
+  grid-column: span 2; 
+
+}
 /* Main Ends */
