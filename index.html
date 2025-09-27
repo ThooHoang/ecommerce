@@ -5,6 +5,15 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Shop high-quality clothing and fashion items. Find the perfect style with our diverse range of garments from top international brands." />
+    <meta name="keywords" content="clothing, fashion, e-commerce, shirts, jeans, casual wear, formal wear" />
+    
+    <!-- Open Graph meta tags for social sharing -->
+    <meta property="og:title" content="E-Commerce Website | Fashion & Clothing" />
+    <meta property="og:description" content="Browse our diverse range of clothing and find the perfect style for you." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="./assets/hero_bg_img.png" />
+    
     <link rel="stylesheet" href="src/style.css">
     <title>E-Commerce Website | Quang Tho Hoang</title>
   </head>
@@ -13,22 +22,31 @@
       <div class="announcement-bar">
         <p>Sign up and get 20% off to your first order. <a href="#">Sign Up Now</a></p>
       </div>
-      <nav>
+      <nav aria-label="Main navigation">
         <div class="navbar-container">
-          <a href="index.html"><img src="./assets/logo.png" alt="logo"></a>
-          <ul class="navbar-links">
-            <a href=""><li>Shop</li></a>
-            <a href=""><li>On Sale</li></a>
-            <a href=""><li>New Arrivals</li></a>
-            <a href=""><li>Brands</li></a>
+          <a href="index.html" aria-label="Shop.co homepage">
+            <img src="./assets/logo.png" alt="Shop.co logo">
+          </a>
+          <ul class="navbar-links" role="list">
+            <li><a href="#shop">Shop</a></li>
+            <li><a href="#sale">On Sale</a></li>
+            <li><a href="#arrivals">New Arrivals</a></li>
+            <li><a href="#brands">Brands</a></li>
           </ul>
-          <div class="input-icon">
-            <input type="text" class="search-bar" placeholder="Search for products...">
-            <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="search-container">
+            <label for="search" class="sr-only">Search for products</label>
+            <div class="input-icon">
+              <input type="search" id="search" class="search-bar" placeholder="Search for products..." aria-label="Search products">
+              <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+            </div>
           </div>
           <div class="navbar-icons">
-            <a href="#"><i class="fa-solid fa-cart-shopping fa-lg"></i></a>
-            <a href="#"><i class="fa-solid fa-user fa-lg"></i></a>
+            <a href="#cart" aria-label="Shopping cart">
+              <i class="fa-solid fa-cart-shopping fa-lg" aria-hidden="true"></i>
+            </a>
+            <a href="#account" aria-label="User account">
+              <i class="fa-solid fa-user fa-lg" aria-hidden="true"></i>
+            </a>
           </div>
         </div>
       </nav>
@@ -37,7 +55,7 @@
           <div class="hero-container__content">
             <h1>FIND CLOTHES THAT MATCHES YOUR STYLE</h1>
             <p>Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality and cater to your sense of style.</p>
-            <a href="#" class="primary-button">Shop Now</a>
+            <a href="#shop" class="btn primary-button">Shop Now</a>
             <div class="hero-stats">
               <div class="hero-stat">
                 <h2>200+</h2>
@@ -64,42 +82,51 @@
       </div>
     </header>
     <main class="container-padding">
-      <section class="new-arrivals" style="margin-bottom: 4rem; border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding-bottom: 6rem;">
-        <h1>NEW ARRIVALS</h1>
+      <section class="new-arrivals" id="arrivals" style="margin-bottom: 4rem; border-bottom: 1px solid rgba(0, 0, 0, 0.1); padding-bottom: 6rem;">
+        <h2>NEW ARRIVALS</h2>
         <div class="arrival-cards">
-          <div class="arrival-card">
-            <img src="./assets/black_tshirt.png" alt="">
-            <p>T-SHIRT WITH TAPE DETAILS</p>
-            <div class="stars">
+          <article class="arrival-card">
+            <img src="./assets/black_tshirt.png" alt="Black t-shirt with tape details, front view">
+            <header class="card-header">
+              <h3>T-SHIRT WITH TAPE DETAILS</h3>
+            </header>
+            <div class="product-rating" role="img" aria-label="Rating: 4.5 out of 5 stars">
               <div class="stars-container">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star-half-stroke"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star-half-stroke" aria-hidden="true"></i>
               </div>
-              <p>4.5/<span style="color:rgba(0, 0, 0, 0.6) ;">5</span></p>
+              <span class="rating-text">4.5/<span class="rating-total">5</span></span>
+              <span class="sr-only">4.5 out of 5 stars</span>
             </div>
-            <h3>$120</h3>
-          </div>
-          <div class="arrival-card">
-            <img src="./assets/skinnyjeans.png" alt="">
-            <p>SKINNY FIT JEANS</p>
-            <div class="stars">
+            <div class="product-price">
+              <span class="current-price">$120</span>
+            </div>
+          </article>
+          <article class="arrival-card">
+            <img src="./assets/skinnyjeans.png" alt="Blue skinny fit jeans, front view">
+            <header class="card-header">
+              <h3>SKINNY FIT JEANS</h3>
+            </header>
+            <div class="product-rating" role="img" aria-label="Rating: 4.5 out of 5 stars">
               <div class="stars-container">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star-half-stroke"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star-half-stroke" aria-hidden="true"></i>
               </div>
-              <p>4.5/<span style="color:rgba(0, 0, 0, 0.6) ;">5</span></p>
+              <span class="rating-text">4.5/<span class="rating-total">5</span></span>
+              <span class="sr-only">4.5 out of 5 stars</span>
             </div>
-            <div class="arrival-price">
-              <h3>$240 <span style="color:rgba(0, 0, 0, 0.4) ; text-decoration: line-through; padding-left: .5rem;">$260</span></h3>
-              <div class="discount">-20%</div>
+            <div class="product-price">
+              <span class="current-price">$240</span>
+              <span class="original-price">$260</span>
+              <span class="discount-badge">-20%</span>
             </div>
-          </div>
+          </article>
           <div class="arrival-card">
             <img src="./assets/checkeredshirt.png" alt="">
             <p>CHECKERED SHIRT</p>
